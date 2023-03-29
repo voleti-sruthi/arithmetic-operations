@@ -3,6 +3,7 @@ package com.m2pfintech;
 import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class ArithmeticOperationsTest {
     ArithmeticOperations arithmeticOperationsObject = new ArithmeticOperations();
@@ -13,7 +14,7 @@ public class ArithmeticOperationsTest {
 
         int actualValue = arithmeticOperationsObject.add(7,9);
 
-        assertEquals(expectedValue,actualValue);
+        assertEquals(expectedValue , actualValue);
 
     }
     @Test
@@ -23,7 +24,7 @@ public class ArithmeticOperationsTest {
 
         int actualValue = arithmeticOperationsObject.subtract(9,7);
 
-        assertEquals(expectedValue,actualValue);
+        assertEquals(expectedValue , actualValue);
 
     }
 
@@ -34,7 +35,7 @@ public class ArithmeticOperationsTest {
 
         int actualValue = arithmeticOperationsObject.subtract(7,9);
 
-        assertEquals(expectedValue,actualValue);
+        assertEquals(expectedValue , actualValue);
 
     }
 
@@ -45,7 +46,7 @@ public class ArithmeticOperationsTest {
 
         long actualValue = arithmeticOperationsObject.multiply(7,9);
 
-        assertEquals(expectedValue,actualValue);
+        assertEquals(expectedValue , actualValue);
 
     }
     @Test
@@ -55,7 +56,7 @@ public class ArithmeticOperationsTest {
 
         long actualValue = arithmeticOperationsObject.multiply(-7,-9);
 
-        assertEquals(expectedValue,actualValue);
+        assertEquals(expectedValue , actualValue);
 
     }
 
@@ -66,7 +67,7 @@ public class ArithmeticOperationsTest {
 
         long actualValue = arithmeticOperationsObject.multiply(7,-9);
 
-        assertEquals(expectedValue,actualValue);
+        assertEquals(expectedValue , actualValue);
 
     }
 
@@ -77,9 +78,46 @@ public class ArithmeticOperationsTest {
 
         long actualValue = arithmeticOperationsObject.multiply(0,9);
 
-        assertEquals(expectedValue,actualValue);
+        assertEquals(expectedValue , actualValue);
 
     }
 
+    @Test
+    void toReturnTwoWhenSixIsDividedByThree(){
+        double expectedValue = 2;
+        double actualValue = arithmeticOperationsObject.divide(6, 3);
+
+            assertEquals(expectedValue, actualValue);
+    }
+
+    @Test
+    void toReturnMinusTwoPointWhenSixIsDividedByMinusThree(){
+        double expectedValue = -2;
+        double actualValue = arithmeticOperationsObject.divide(6, -3);
+
+        assertEquals(expectedValue, actualValue);
+    }
+
+    @Test
+    void toReturnTwoWhenMinusSixIsDividedByMinusThree(){
+        double expectedValue = 2;
+        double actualValue = arithmeticOperationsObject.divide(-6, -3);
+
+        assertEquals(expectedValue, actualValue);
+    }
+
+    @Test
+    void toReturnTwoPointFiveWhenFiveIsDividedByTwo(){
+        double expectedValue = 2.5;
+        double actualValue = arithmeticOperationsObject.divide(5, 2);
+
+        assertEquals(expectedValue, actualValue);
+    }
+
+    @Test
+    void toThrowExceptionWhenDividedByZero(){
+        assertThrows(ArithmeticException.class,() -> arithmeticOperationsObject.divide(5, 0));
+    }
 
 }
+

@@ -10,7 +10,14 @@ public class ArithmeticOperations {
         return firstNumber - secondNumber;
     }
 
-    public long multiply(int firstNumber, int secondNumber) {
+    public long multiply(long firstNumber, long secondNumber) {
         return firstNumber*secondNumber;
+    }
+
+    public double divide(double firstNumber , double secondNumber ) throws ArithmeticException{
+        if(secondNumber == 0){
+            throw new ArithmeticException();
+        }
+        return firstNumber/secondNumber;
     }
 }
