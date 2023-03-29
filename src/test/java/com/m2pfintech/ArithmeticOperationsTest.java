@@ -16,5 +16,27 @@ public class ArithmeticOperationsTest {
         assertEquals(expectedValue,actualValue);
 
     }
+    @Test
+    void toReturnTwoWhenSevenIsSubtractedToNine(){
+
+        int expectedValue = 2;
+
+        int actualValue = arithmeticOperationsObject.subtract(9,7);
+
+        assertEquals(expectedValue,actualValue);
+
+    }
+
+    @Test
+    void toReturnMinusTwoWhenNineIsSubtractedToSeven(){
+
+        int expectedValue = -2;
+
+        int actualValue = arithmeticOperationsObject.subtract(7,9);
+
+        assertEquals(expectedValue,actualValue);
+
+    }
+
 
 }
