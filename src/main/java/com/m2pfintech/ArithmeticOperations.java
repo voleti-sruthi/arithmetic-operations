@@ -9,4 +9,8 @@ public class ArithmeticOperations {
     public int subtract(int firstNumber, int secondNumber) {
         return firstNumber - secondNumber;
     }
+
+    public long multiply(int firstNumber, int secondNumber) {
+        return firstNumber*secondNumber;
+    }
 }

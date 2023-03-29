@@ -17,7 +17,7 @@ public class ArithmeticOperationsTest {
 
     }
     @Test
-    void toReturnTwoWhenSevenIsSubtractedToNine(){
+    void toReturnTwoWhenSevenIsSubtractedFromNine(){
 
         int expectedValue = 2;
 
@@ -28,11 +28,54 @@ public class ArithmeticOperationsTest {
     }
 
     @Test
-    void toReturnMinusTwoWhenNineIsSubtractedToSeven(){
+    void toReturnMinusTwoWhenNineIsSubtractedFromSeven(){
 
         int expectedValue = -2;
 
         int actualValue = arithmeticOperationsObject.subtract(7,9);
+
+        assertEquals(expectedValue,actualValue);
+
+    }
+
+    @Test
+    void toReturnSixtyThreeWhenNineIsMultipliedWithSeven(){
+
+        long expectedValue = 63;
+
+        long actualValue = arithmeticOperationsObject.multiply(7,9);
+
+        assertEquals(expectedValue,actualValue);
+
+    }
+    @Test
+    void toReturnSixtyThreeWhenMinusNineIsMultipliedWithMinusSeven(){
+
+        long expectedValue = 63;
+
+        long actualValue = arithmeticOperationsObject.multiply(-7,-9);
+
+        assertEquals(expectedValue,actualValue);
+
+    }
+
+    @Test
+    void toReturnMinusSixtyThreeWhenMinusNineIsMultipliedWithSeven(){
+
+        long expectedValue = -63;
+
+        long actualValue = arithmeticOperationsObject.multiply(7,-9);
+
+        assertEquals(expectedValue,actualValue);
+
+    }
+
+    @Test
+    void toReturnZeroWhenNineIsMultipliedWithZero(){
+
+        long expectedValue = 0;
+
+        long actualValue = arithmeticOperationsObject.multiply(0,9);
 
         assertEquals(expectedValue,actualValue);
 
